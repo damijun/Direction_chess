@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Program
 {
@@ -190,7 +191,8 @@ namespace Program
                                 {
                                     if (g(triy, trix, 0) == 5)
                                     {
-                                        List<int> vv = new List<int>() { trix, triy, 5, g(triy, trix, 1), cl };//触发横坐标,触发纵坐标,触发类型,触发等级,触发者等级
+                                        int vvv = Convert.ToInt16(g(triy, trix, 1) + cl == 4);
+                                        List<int> vv = new List<int>() { trix, triy, 5, g(triy, trix, 1), cl-vvv };//触发横坐标,触发纵坐标,触发类型,触发等级,触发者等级
                                         storage.Add(vv);
                                     }
                                     else
